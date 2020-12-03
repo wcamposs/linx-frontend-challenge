@@ -1,6 +1,7 @@
 # linx-frontend-challenge
 
 My application from Linx front-end challenge!
+The project aims to follow [these requirements](https://github.com/chaordic/frontend-developer-challenge)
 
 ## Cloning Repository
 
