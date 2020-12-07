@@ -34,7 +34,6 @@
   background-color: #ffffff;
   text-align: center;
   padding: 20px 0;
-  font-size: 30px; /* remove this later */
 }
 
 .header-container {
@@ -112,6 +111,10 @@
   opacity: 1;
 }
 
+.buttons-container button:hover {
+  background: #dbdbdb;
+}
+
 .newsletter-text {
   float: left;
 }
@@ -150,8 +153,6 @@
 }
 
 .newsletter-fields form .field-group label {
-  top: 420px;
-  left: 870px;
   width: 58px;
   height: 14px;
 
@@ -163,8 +164,6 @@
 }
 
 .newsletter-fields form .field-group input {
-  top: 441px;
-  left: 870px;
   width: 340px;
   height: 30px;
 
@@ -181,8 +180,6 @@
 }
 
 .newsletter-fields form .radio-group input {
-  top: 633px;
-  left: 870px;
   width: 14px;
   height: 14px;
 
@@ -192,8 +189,6 @@
 }
 
 .newsletter-fields form .radio-group label {
-  top: 633px;
-  left: 889px;
   width: 55px;
   height: 14px;
 
@@ -205,8 +200,6 @@
 }
 
 .newsletter-fields form button {
-  top: 670px;
-  left: 870px;
   width: 350px;
   height: 39px;
 
@@ -217,9 +210,11 @@
   opacity: 1;
 }
 
+.newsletter-fields form button:hover {
+  background: #dbdbdb;
+}
+
 .newsletter-fields form button span {
-  top: 681px;
-  left: 1018px;
   width: 44px;
   height: 18px;
   text-align: left;
@@ -229,8 +224,134 @@
   opacity: 1;
 }
 
+.products-section {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.products-section::before,
+.products-section::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #888888;
+  opacity: 1;
+}
+
+.products-section::before {
+  margin-right: 0.5em;
+}
+.products-section::after {
+  margin-left: 0.5em;
+}
+
+.products .products-section h4 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Helvetica Neue";
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+}
+
+.share-section {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.share-section::before,
+.share-section::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #888888;
+  opacity: 1;
+}
+
+.share-section::before {
+  margin-right: 0.5em;
+}
+.share-section::after {
+  margin-left: 0.5em;
+}
+
+.share .share-section h4 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Helvetica Neue";
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+}
+
+.share p {
+  text-align: center;
+  font-weight: normal;
+  font-size: 16px;
+  font-family: "Helvetica Neue";
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+  margin-bottom: 50px;
+}
+
+.share form .field-group {
+  text-align: center;
+}
+
+.share form .form-column {
+  width: 50%;
+  float: left;
+}
+
+.share form .field-group label {
+  text-align: left;
+  font-weight: normal;
+  font-size: 12px;
+  font-family: "Helvetica Neue";
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+}
+
+.share form .field-group input {
+  width: 340px;
+  height: 30px;
+
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+  margin-bottom: 40px;
+}
+
+.share form button {
+  width: 230px;
+  height: 39px;
+
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.share form button:hover {
+  background: #dbdbdb;
+}
+
+.share form button span {
+  width: 89px;
+  height: 18px;
+
+  text-align: left;
+  font: normal normal normal 16px/16px Helvetica Neue;
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+}
+
 .footer-container {
-  top: 2151px;
   width: 100vw;
   height: 293px;
 
