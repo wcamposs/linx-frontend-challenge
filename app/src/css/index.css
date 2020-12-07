@@ -25,16 +25,16 @@
     "products products"
     "share share"
     "footer footer";
-  grid-gap: 10px; /* remove this later */
+  grid-gap: 10px;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px; /* remove this later */
+  padding: 10px;
 }
 
 .grid-container > div {
   background-color: #ffffff;
   text-align: center;
-  padding: 20px 0; /* remove this later */
-  font-size: 30px;
+  padding: 20px 0;
+  font-size: 30px; /* remove this later */
 }
 
 .header-container {
@@ -118,7 +118,7 @@
 
 .newsletter-text-container {
   padding-left: 380px;
-  padding-right: 150px;
+  padding-right: 545px;
   position: relative;
 }
 
@@ -135,6 +135,95 @@
   text-align: left;
   padding: 5px 0px 5px 0px;
   font: normal normal normal 12px/18px Helvetica Neue;
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+}
+
+.newsletter-fields {
+  position: relative;
+  margin-left: -145%;
+}
+
+.newsletter-fields form .field-group {
+  text-align: left;
+}
+
+.newsletter-fields form .field-group label {
+  top: 420px;
+  left: 870px;
+  width: 58px;
+  height: 14px;
+
+  text-align: left;
+  font: normal normal normal 12px/14px Helvetica Neue;
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+}
+
+.newsletter-fields form .field-group input {
+  top: 441px;
+  left: 870px;
+  width: 340px;
+  height: 30px;
+
+  margin-bottom: 5px;
+  display: block;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+}
+
+.newsletter-fields form .radio-group {
+  margin-left: -82%;
+  margin-bottom: 10px;
+}
+
+.newsletter-fields form .radio-group input {
+  top: 633px;
+  left: 870px;
+  width: 14px;
+  height: 14px;
+
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+}
+
+.newsletter-fields form .radio-group label {
+  top: 633px;
+  left: 889px;
+  width: 55px;
+  height: 14px;
+
+  text-align: left;
+  font: normal normal normal 12px/14px Helvetica Neue;
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+}
+
+.newsletter-fields form button {
+  top: 670px;
+  left: 870px;
+  width: 350px;
+  height: 39px;
+
+  margin-left: -60%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.newsletter-fields form button span {
+  top: 681px;
+  left: 1018px;
+  width: 44px;
+  height: 18px;
+  text-align: left;
+  font: normal normal normal 16px/16px Helvetica Neue;
   letter-spacing: 0px;
   color: #888888;
   opacity: 1;
