@@ -1,68 +1,94 @@
-body {
-  font-family: "Helvetica Neue";
+.header {
+  grid-area: header;
+}
+.newsletter-text {
+  grid-area: newsletter-text;
+}
+.newsletter-fields {
+  grid-area: newsletter-fields;
+}
+.products {
+  grid-area: products;
+}
+.share {
+  grid-area: share;
+}
+.footer {
+  grid-area: footer;
 }
 
-#app {
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  opacity: 1;
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "newsletter-text newsletter-fields"
+    "products products"
+    "share share"
+    "footer footer";
+  grid-gap: 10px; /* remove this later */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px; /* remove this later */
 }
 
-#app .page-header {
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 399px;
+.grid-container > div {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 20px 0; /* remove this later */
+  font-size: 30px;
+}
 
+.header-container {
   background: #707070 0% 0% no-repeat padding-box;
   border: 1px solid #707070;
   opacity: 1;
 
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6vw));
-}
-
-.header-container {
-  position: absolute;
-  left: 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 8vw));
 }
 
 .title-container {
-  padding: 30px 0px 0px 0px;
+  padding: 40px 0px 0px 0px;
 }
 
-h4 {
+.title-container h4 {
   text-align: center;
-  font: normal normal normal 26px helvetica Neue;
+  font-weight: normal;
+  font-size: 24px;
+  font-family: "helvetica Neue";
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
 }
 
-h1 {
+.title-container h1 {
   margin-top: -30px;
   text-align: center;
-  font: bold 42px Helvetica Neue;
+  font-weight: bold;
+  font-size: 49px;
+  font-family: "helvetica Neue";
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
 }
 
-p {
+.title-container p {
   text-align: center;
-  font: normal 18px Helvetica Neue;
+  font-weight: normal;
+  font-size: 16px;
+  font-family: "helvetica Neue";
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
 }
 
 .buttons-container {
-  padding: 40px 40px 40px 0px;
+  padding: 40px 40px 150px 0px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
-button {
+.buttons-container button {
   width: 160px;
   height: 40px;
 
@@ -76,15 +102,45 @@ button {
   opacity: 1;
 }
 
-button span {
+.buttons-container button span {
   text-align: center;
-  font: normal normal normal 14px Helvetica Neue;
+  font-weight: normal;
+  font-size: 16px;
+  font-family: "helvetica Neue";
   letter-spacing: 0px;
   color: #888888;
   opacity: 1;
 }
 
-.page-footer {
+.newsletter-text {
+  float: left;
+}
+
+.newsletter-text-container {
+  padding-left: 380px;
+  padding-right: 150px;
+  position: relative;
+}
+
+.newsletter-text-container h2 {
+  text-align: left;
+  font: normal normal normal 20px/24px Helvetica Neue;
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+  padding: 10px 0px 10px 0px;
+}
+
+.newsletter-text-container p {
+  text-align: left;
+  padding: 5px 0px 5px 0px;
+  font: normal normal normal 12px/18px Helvetica Neue;
+  letter-spacing: 0px;
+  color: #888888;
+  opacity: 1;
+}
+
+.footer-container {
   top: 2151px;
   width: 100vw;
   height: 293px;
@@ -101,7 +157,7 @@ button span {
   text-align: center;
 }
 
-.page-footer span {
+.page-footer-text-container p {
   color: #ffffff;
   text-align: center;
   font: normal normal normal 14px Helvetica Neue;
