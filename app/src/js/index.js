@@ -2,7 +2,14 @@ let pageNumber = 1;
 
 // When the document loads, call the 'getProducts' function, calling the eight products from first page API.
 document.onreadystatechange = function () {
-  getProducts()
+  getProducts();
+};
+
+function getProducts(pageNumber) {
+  return axios
+    .get(
+      `https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${pageNumber}`
+    )
     .then((response) => {
       pageNumber++;
       addCards(response.data);
@@ -10,12 +17,6 @@ document.onreadystatechange = function () {
     .catch((err) => {
       console.log("Error: ", err);
     });
-};
-
-function getProducts(pageNumber) {
-  return axios.get(
-    `https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${pageNumber}`
-  );
 }
 
 function addCards(data) {
@@ -62,8 +63,7 @@ document
 
 // Load next page products and increment page number
 function loadMoreProducts() {
-  getProducts(pageNumber);
-  pageNumber++;
+  getProducts(pageNumber++);
 }
 
 // Email validation on share section
