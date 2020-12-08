@@ -3,13 +3,13 @@ function getProducts(url) {
   }
   
   function addCards(data) {
+    
+    const container = document.getElementsByClassName('product-grid');
+    
+    // Iterating to products and adding a card for each one
     data.products.map((product) => {
-        // remove this later
-        console.log(product);
 
-        const container = document.getElementsByClassName('product-grid');
         //Constructing card content
-
         const content = `
         <div class="product-card">
             <div class="image-container">
@@ -34,8 +34,10 @@ function getProducts(url) {
         </div>
         `;
 
-        //Appending card element to grid container
-        container.innerHTML += content;
+        console.log(container);
+
+        //Appending card element to grid container    
+        container[0].innerHTML += content;
     });
   }
   
