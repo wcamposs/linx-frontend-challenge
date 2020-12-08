@@ -52,13 +52,13 @@ function getProducts(url) {
       });
   };
 
-// Creating const to get newsletter email value
-const newsletterEmail = document.getElementById('newsletter-email');
-// Creating const to provide validation feedback
+// EMAIL VALIDATION
+
+const shareEmail = document.getElementById('share-email');
 const emailResponse = document.getElementById('email-validation-response');
 
-newsletterEmail.addEventListener("input", function() {
-    var email = newsletterEmail.value;
+shareEmail.addEventListener("input", function() {
+    var email = shareEmail.value;
 
     // Call 'validateEmail' function and return a feedback message
     if (validateEmail(email)) {
