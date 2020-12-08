@@ -34,8 +34,6 @@ function getProducts(url) {
         </div>
         `;
 
-        console.log(container);
-
         //Appending card element to grid container    
         container[0].innerHTML += content;
     });
@@ -54,3 +52,32 @@ function getProducts(url) {
       });
   };
 
+// EMAIL VALIDATION
+
+const shareEmail = document.getElementById('share-email');
+const emailResponse = document.getElementById('email-validation-response');
+
+shareEmail.addEventListener("input", function() {
+    var email = shareEmail.value;
+
+    // Call 'validateEmail' function and return a feedback message
+    if (validateEmail(email)) {
+        emailResponse.innerHTML = "Email válido!"
+
+    } else {
+        emailResponse.innerHTML = "Email inválido!"
+    }
+
+    // Erase feedback message to user if he clear email field
+    if (email.length === 0) {
+        emailResponse.innerHTML = ""
+    }
+})
+
+function validateEmail(email) {
+    // Regex to validate email
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    // Converting email to a lower case string (for POST purposes)
+    return re.test(String(email).toLowerCase());
+}
