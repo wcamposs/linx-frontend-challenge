@@ -1,16 +1,30 @@
-function getProducts(url) {
-    return axios.get(url);
-  }
-  
-  function addCards(data) {
-    
-    const container = document.getElementsByClassName('product-grid');
-    
-    // Iterating to products and adding a card for each one
-    data.products.map((product) => {
+let pageNumber = 1;
 
-        //Constructing card content
-        const content = `
+// When the document loads, call the 'getProducts' function, calling the eight products from first page API.
+document.onreadystatechange = function () {
+  getProducts()
+    .then((response) => {
+      pageNumber++;
+      addCards(response.data);
+    })
+    .catch((err) => {
+      console.log("Error: ", err);
+    });
+};
+
+function getProducts(pageNumber) {
+  return axios.get(
+    `https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${pageNumber}`
+  );
+}
+
+function addCards(data) {
+  const container = document.getElementsByClassName("product-grid");
+
+  // Iterating to products and adding a card for each one
+  data.products.map((product) => {
+    //Constructing card content
+    const content = `
         <div class="product-card">
             <div class="image-container">
                 <img class="product-image" src="${product.image}" alt="product image"/>
@@ -34,50 +48,48 @@ function getProducts(url) {
         </div>
         `;
 
-        //Appending card element to grid container    
-        container[0].innerHTML += content;
-    });
+    //Appending card element to grid container
+    container[0].innerHTML += content;
+  });
+}
+
+// Adding listener to "load more products" button, and calling 'loadMoreProducts' function
+document
+  .getElementsByClassName("more-products-button")[0]
+  .addEventListener("click", () => {
+    loadMoreProducts();
+  });
+
+// Load next page products and increment page number
+function loadMoreProducts() {
+  getProducts(pageNumber);
+  pageNumber++;
+}
+
+// Email validation on share section
+const shareEmail = document.getElementById("share-email");
+const emailResponse = document.getElementById("email-validation-response");
+
+shareEmail.addEventListener("input", function () {
+  var email = shareEmail.value;
+
+  // Call 'validateEmail' function and return a feedback message
+  if (validateEmail(email)) {
+    emailResponse.innerHTML = "Email válido!";
+  } else {
+    emailResponse.innerHTML = "Email inválido!";
   }
-  
-  document.onreadystatechange = function () {
-    const apiUrl =
-      "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1";
-  
-    getProducts(apiUrl)
-      .then((response) => {
-        addCards(response.data);
-      })
-      .catch((err) => {
-        console.log("Error: ", err);
-      });
-  };
 
-// EMAIL VALIDATION
-
-const shareEmail = document.getElementById('share-email');
-const emailResponse = document.getElementById('email-validation-response');
-
-shareEmail.addEventListener("input", function() {
-    var email = shareEmail.value;
-
-    // Call 'validateEmail' function and return a feedback message
-    if (validateEmail(email)) {
-        emailResponse.innerHTML = "Email válido!"
-
-    } else {
-        emailResponse.innerHTML = "Email inválido!"
-    }
-
-    // Erase feedback message to user if he clear email field
-    if (email.length === 0) {
-        emailResponse.innerHTML = ""
-    }
-})
+  // Erase feedback message to user if he clear email field
+  if (email.length === 0) {
+    emailResponse.innerHTML = "";
+  }
+});
 
 function validateEmail(email) {
-    // Regex to validate email
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // Regex to validate email
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    // Converting email to a lower case string (for POST purposes)
-    return re.test(String(email).toLowerCase());
+  // Converting email to a lower case string (for POST purposes)
+  return re.test(String(email).toLowerCase());
 }
