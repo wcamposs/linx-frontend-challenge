@@ -9,11 +9,11 @@ If you prefer, check the [Live Preview Version on Heroku](https://linx-frontend-
 
 - For each product returned by the API, a product card with the respective information must be created in the product grid;
 - By clicking the button **Ainda mais produtos aqui!** the next page of the API must be consulted, generating 8 more products in the existing grid, below the products already loaded by the first requisition;
-- The newsletter form with the title **Compartilhe a novidade** has validation for the email field.
+- The newsletter form with the title **Compartilhe a novidade** has validation for the **email** field.
 
 ## Requirements Not Met
 
-- The newsletter form with the title **Compartilhe a novidade** has validation for the name field.
+- The newsletter form with the title **Compartilhe a novidade** has validation for the **name** field.
 - Responsiveness for mobile.
 - Responsiveness for email.
 - Send email with personalized products. **(Extra)**
