@@ -122,6 +122,7 @@
 .newsletter-text-container {
   padding-left: 380px;
   padding-right: 545px;
+  width: 520px;
   position: relative;
 }
 
@@ -145,11 +146,13 @@
 
 .newsletter-fields {
   position: relative;
-  margin-left: -145%;
+  width: 340px;
+  margin-left: -350px;
 }
 
 .newsletter-fields form .field-group {
   text-align: left;
+  margin-left: -30%;
 }
 
 .newsletter-fields form .field-group label {
@@ -178,7 +181,7 @@
 }
 
 .newsletter-fields form .radio-group {
-  margin-left: -82%;
+  margin-left: -120%;
   margin-bottom: 15px;
 }
 
@@ -260,7 +263,6 @@
 
 .product-grid {
   width: 931px;
-  height: 740px;
 
   margin-left: 23%;
   display: grid;

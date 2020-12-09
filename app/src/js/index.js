@@ -63,7 +63,12 @@ document
 
 // Load next page products and increment page number
 function loadMoreProducts() {
-  getProducts(pageNumber++);
+  window.addEventListener("scroll", () => {
+    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight > scrollHeight - 5) {
+      getProducts(pageNumber++);
+    }
+  });
 }
 
 // Email validation on share section
