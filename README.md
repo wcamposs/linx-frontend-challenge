@@ -1,7 +1,9 @@
 # Linx Impulse: Frontend Challenge
 
 My application from Linx Impulse front-end challenge!
-The project aims to follow [these requirements](https://github.com/chaordic/frontend-developer-challenge)
+The project aims to follow [these requirements](https://github.com/chaordic/frontend-developer-challenge).
+
+If you prefer, check the [Live Preview Version on Heroku](https://linx-frontend-challenge.herokuapp.com/).
 
 ## Cloning Repository
 
