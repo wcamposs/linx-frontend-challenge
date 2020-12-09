@@ -64,6 +64,9 @@ document
   });
 
 window.addEventListener("scroll", () => {
+  //Unbind scroll to prevent infinite scroll from get more products without user click on button
+  window.unbind("scroll");
+
   const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight > scrollHeight - 5) {
     if (busy === false) {
